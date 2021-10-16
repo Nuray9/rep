@@ -1,0 +1,15 @@
+def bubble_sort(alist):
+    for j in range(len(alist) - 1, 0, -1):
+        no_swap = True
+        for k in range(0, j):
+            if alist[k + 1] < alist[k]:
+                alist[k], alist[k + 1] = alist[k + 1], alist[k]
+                no_swap = False
+        if no_swap:
+            return
+        
+alist = input('Введите шеренга чисел:').split()
+alist = [int(x) for x in alist]
+bubble_sort(alist)
+print('Отсортированный шеренга чисел: ',end='')
+print(alist)
